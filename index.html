@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Lieferkostenkalkulation</title>
+
+    <meta name="description" content="Lieferkostenkalkulation für Sonderartikel">
+    <meta name="keywords" content="Kosten, Lieferkosten, Kalkulation">
+    <meta name="author" content="Joey Blankenhagen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <!-- Top -->
+    <div class="mb-5">
+        <h1>Lieferkostenrechner</h1>
+        <h3>Lieferkosten für Sonderartikel berechnen</h3>
+        <p>Für Lieferungen von Artikeln, die <i>nicht</i> in den Artikelstammdaten vorkommen, kann das folgende Formular zur Berechnung der Lieferkosten herangezogen werden:</p>
+    </div>
+
+    <!-- Middle -->
+    <div class="row">
+        <div class="col" id="containerLeft">
+            <form name="calculateLieferkosten">
+                <div class="mb-3">
+                    <label for="warenwertInput" class="form-label">Warenwert:</label>
+                    <input type="text" class="form-control" id="warenwertInput" placeholder="Warenwert in Euro eingeben!">
+                </div>
+                <div class="mb-3">
+                    <label for="plzGebietInput" class="form-label">Postleitzahlengebiet-Auswahl</label>
+                    <select class="form-select" id="plzGebietInput" aria-label="Default select example">
+                        <option value="-1" selected>Wählen Sie das gewünschte PLZ-Gebiet aus!</option>
+                        <option value="0">PLZ-Gebiet: 0</option>
+                        <option value="1">PLZ-Gebiet: 1</option>
+                        <option value="2">PLZ-Gebiet: 2</option>
+                        <option value="3">PLZ-Gebiet: 3</option>
+                        <option value="4">PLZ-Gebiet: 4</option>
+                        <option value="5">PLZ-Gebiet: 5</option>
+                        <option value="6">PLZ-Gebiet: 6</option>
+                        <option value="7">PLZ-Gebiet: 7</option>
+                        <option value="8">PLZ-Gebiet: 8</option>
+                        <option value="9">PLZ-Gebiet: 9</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <a target="_blank" href="https://www.plz-suche.org/de/plz-karte">PLZ-Suche.org (externer Link)</a>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="expressInput" value="">
+                    <label for="expressInput" class="form-check-label">Expresslieferung</label>
+                </div>
+            </form>
+        </div>
+        <div class="col-auto" id="containerRight">
+            <img alt="Bild mit allen Postleitzahlengebieten eingetragen" src="img/256px-Postcode_map_sample_germany.png">
+            <p class="text-primary">Quelle: <span class="text-info">GfK GeoMarketing</span></p>
+        </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="mt-5">
+        <form name="Ausgabeformular">
+            <div class="mb-3">
+                <button type="button" class="btn btn-primary" id="calculateButton">Kosten berechnen</button>
+            </div>
+            <div class="mb-3">
+                <label for="lieferkostenOutput">Ermittelte Lieferkosten in Euro:</label>
+                <output for="calculateLieferkosten" id="lieferkostenOutput"></output>
+            </div>
+        </form>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="js/lieferkostenKalkulation.js"></script>
+</body>
+</html>
